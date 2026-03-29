@@ -1,4 +1,4 @@
-# Sistem PPDB
+# Sistem PPDB(Penerimaan Peserta Didik Baru)
 
 Sistem PPDB (Penerimaan Peserta Didik Baru) adalah aplikasi berbasis web yang dirancang untuk mengelola proses pendaftaran siswa di TKQ AS-SALAM secara digital. 
 Sistem ini bertujuan untuk mempermudah proses registrasi, pengunggahan dokumen, pembayaran, hingga pelaporan secara terstruktur dan efisien.
@@ -12,7 +12,7 @@ Aplikasi ini mendukung berbagai peran pengguna seperti admin, bendahara, kepala 
 - Melakukan pembayaran
 - Melihat status pendaftaran dan hasil seleksi
 
-### Admin PPDB
+### Admin PPDB (Penerimaan Peserta Didik Baru)
 - Mengelola akun siswa
 - Memverifikasi berkas pendaftaran
 - Mengelola data pendaftaran
