@@ -30,7 +30,7 @@ Aplikasi ini mendukung berbagai peran pengguna seperti admin, bendahara, kepala 
 
 - Sistem pendaftaran siswa secara online
 - Upload dan verifikasi dokumen
-- Sistem login multi-role (Admin, Bendahara, Kepala Sekolah, Wali)
+- Sistem login multi-role (Admin, Bendahara, Kepala Sekolah, Wali Siswa)
 - Sistem pembayaran (konsep integrasi payment gateway)
 - Verifikasi dan monitoring pembayaran
 - Sistem laporan (pendaftaran dan keuangan)
