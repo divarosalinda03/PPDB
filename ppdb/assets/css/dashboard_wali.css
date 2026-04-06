@@ -1,0 +1,297 @@
+:root {
+    --timberwolf: #dad7cdff;
+    --sage: #a3b18aff;
+    --fern-green: #588157ff;
+    --hunter-green: #3a5a40ff;
+    --brunswick-green: #344e41ff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--fern-green);
+    font-family: var(--font-family);
+    color: var(--brunswick-green);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: var(--hunter-green);
+    color: var(--timberwolf);
+    padding: 16px 32px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu-bar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    right: 32px;
+    background-color: var(--hunter-green);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    min-width: 180px;
+}
+
+.menu-bar.active {
+    display: flex;
+}
+
+.menu-bar a {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--sage);
+    text-decoration: none;
+    color: var(--timberwolf);
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.menu-bar a:last-child {
+    border-bottom: none;
+}
+
+.menu-bar a:hover,
+.menu-bar a:focus {
+    background-color: var(--sage);
+    outline: none;
+}
+
+.btn-logout {
+    background-color: var(--brunswick-green);
+    color: var(--timberwolf);
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover,
+.btn-logout:focus {
+    background-color: var(--sage);
+    outline: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 24px auto 32px;
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+h1, h2, h3 {
+    margin: 0 0 16px 0;
+    font-weight: 800;
+}
+
+.profile-section {
+    margin-bottom: 32px;
+}
+
+.profile-table,
+.billing-table,
+.history-table,
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 8px rgba(52, 78, 65, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.profile-table th,
+.profile-table td,
+.billing-table th,
+.billing-table td,
+.history-table th,
+.history-table td,
+.payment-table th,
+.payment-table td {
+    border: 1px solid var(--sage);
+    padding: 14px 20px;
+    color: var(--brunswick-green);
+    text-align: left;
+    vertical-align: middle;
+    background-color: var(--timberwolf);
+}
+
+.profile-table th {
+    background-color: var(--sage);
+    font-weight: 700;
+
+}
+
+.billing-table th,
+.history-table th,
+.payment-table th {
+    background-color: var(--hunter-green);
+    color: var(--timberwolf);
+    font-weight: 700;
+}
+
+.billing-table tr:nth-child(even),
+.history-table tr:nth-child(even),
+.payment-table tr:nth-child(even) {
+    background-color: var(--sage);
+}
+
+.status-diterima {
+    color: green;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.status-ditolak {
+    color: red;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Photo styling separate from table */
+.anak-photo {
+    width: 200px;
+    height: 240px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 8px rgba(52, 78, 65, 0.25);
+}
+
+/* Status box below profile table */
+.status-pendaftaran {
+    background-color: var(--timberwolf);
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 8px rgba(52, 78, 65, 0.15);
+}
+
+.status-pendaftaran h3 {
+    margin-top: 0;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+    /* Layout profile and photo side by side */
+    .profile-section {
+        display: flex;
+        gap: 32px;
+        align-items: flex-start;
+    }
+    .profile-data-wrapper {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+    .menu-bar {
+        width: 100%;
+        right: 0;
+        top: 64px;
+        border-radius: 0;
+    }
+    .profile-section {
+        display: block;
+    }
+    .anak-photo {
+        margin: 0 auto 24px;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    .profile-table th,
+    .profile-table td,
+    .billing-table th,
+    .billing-table td,
+    .history-table th,
+    .history-table td,
+    .payment-table th,
+    .payment-table td {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .status-pendaftaran {
+        padding: 16px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* Gaya untuk dropdown pemilihan profil anak */
+   /* Gaya untuk div pemilihan profil anak */
+.pilih-profil-anak {
+    margin: 20px; /* Jarak di sekitar div */
+}
+
+/* Gaya untuk div pemilihan profil anak */
+.pilih-profil-anak {
+    margin: 20px; /* Jarak di sekitar div */
+}
+
+    /* Gaya untuk label */
+    .pilih-profil-anak label {
+        font-weight: bold; /* Membuat label lebih tebal */
+        color: var(--hunter-green); /* Menggunakan warna dari variabel CSS */
+        margin-bottom: 8px; /* Memberikan jarak di bawah label */
+        display: block; /* Membuat label menjadi block agar berada di atas dropdown */
+    }
+
+    /* Gaya untuk dropdown pemilihan profil anak */
+    .dropdown-anak {
+        width: 100%; /* Membuat dropdown memenuhi lebar kontainer */
+        padding: 10px; /* Memberikan padding untuk ruang di dalam dropdown */
+        border: 2px solid var(--sage); /* Menggunakan warna dari variabel CSS */
+        border-radius: 8px; /* Membuat sudut dropdown melengkung */
+        font-size: 1rem; /* Ukuran font yang nyaman dibaca */
+        color: var(--brunswick-green); /* Warna teks */
+        background-color: var(--timberwolf); /* Warna latar belakang dropdown */
+        transition: border-color 0.3s ease; /* Efek transisi saat hover */
+    }
+
+    /* Gaya saat dropdown dalam keadaan fokus */
+    .dropdown-anak:focus {
+        border-color: var(--hunter-green); /* Mengubah warna border saat fokus */
+        box-shadow: 0 0 5px var(--hunter-green); /* Menambahkan bayangan saat fokus */
+    }
+
+
+
+}

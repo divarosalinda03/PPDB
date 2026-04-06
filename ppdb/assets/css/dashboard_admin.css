@@ -1,0 +1,255 @@
+:root {
+  --timberwolf: #dad7cdff;
+  --sage: #a3b18aff;
+  --fern-green: #588157ff;
+  --hunter-green: #3a5a40ff;
+  --brunswick-green: #344e41ff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  color: var(--brunswick-green);
+}
+
+/* Body styling */
+body {
+  background-color: var(--timberwolf);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding: 16px;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  background: var(--fern-green);
+  color: var(--timberwolf);
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  position: relative; /* untuk alternatif posisi hamburger absolute */
+}
+
+/* Header Title */
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Hamburger menu button style */
+.hamburger {
+  font-size: 1.4rem; /* lebih kecil */
+  cursor: pointer;
+  user-select: none;
+  display: block;
+  color: var(--timberwolf);
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  
+  /* Posisi fixed pojok kanan atas */
+  position: fixed;
+  top: 20px; /* Ubah nilai ini untuk menurunkan tombol */
+  right: 12px;
+  z-index: 1100;
+  background: transparent;
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  background-color: var(--sage);
+  outline: none;
+}
+
+
+/* Menu bar */
+.menu-bar {
+  background: var(--timberwolf);
+  position: fixed;
+  top: 64px; /* tinggi header */
+  right: -280px; /* tersembunyi default */
+  width: 280px;
+  height: 100%;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+  transition: right 0.3s ease;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1099;
+  border-radius: 0 0 0 8px;
+  overflow-y: auto;
+}
+
+/* Menu bar aktif muncul */
+.menu-bar.active {
+  right: 0;
+}
+
+/* Overlay menutupi konten saat menu dibuka */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 64px; /* bawah header */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  z-index: 1098;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+/* Menu links */
+.menu-bar a {
+  padding: 16px 32px;
+  color: var(--fern-green);
+  text-decoration: none;
+  font-weight: 600;
+  border-left: 4px solid transparent;
+  transition: background-color 0.3s ease, border-left-color 0.3s ease;
+}
+
+.menu-bar a:hover,
+.menu-bar a:focus {
+  background-color: var(--sage);
+  border-left-color: var(--fern-green);
+  outline: none;
+}
+
+/* Logout link */
+.menu-bar a.btn-logout {
+  margin-top: auto;
+  color: #d94f4f;
+  font-weight: 700;
+  border-left-color: transparent;
+}
+
+.menu-bar a.btn-logout:hover,
+.menu-bar a.btn-logout:focus {
+  background-color: #f7cccc;
+  color: #b33a3a;
+  border-left-color: #b33a3a;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: var(--timberwolf);
+}
+
+table thead tr {
+  background-color: var(--hunter-green);
+  color: var(--timberwolf);
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 2px solid var(--fern-green);
+}
+
+table th,
+table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--sage);
+}
+
+table tbody tr:hover {
+  background-color: var(--sage);
+  color: var(--brunswick-green);
+}
+
+/* Responsive Table Scroll */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Larger screens - desktop */
+@media (min-width: 769px) {
+  .menu-bar {
+    position: static;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    background: transparent;
+    flex-direction: row;
+    padding: 0;
+  }
+  .menu-bar a {
+    padding: 12px 16px;
+    border-left: none;
+    color: var(--timberwolf);
+  }
+  .menu-bar a:hover,
+  .menu-bar a:focus {
+    background-color: var(--sage);
+    border-left: none;
+    color: var(--brunswick-green);
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Link styling */
+a {
+  color: var(--fern-green);
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+a:hover,
+a:focus {
+  color: var(--hunter-green);
+  outline: none;
+}
+
+/* Back link */
+a[href^="dashboard_admin.php"] {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--fern-green);
+}
+
+a[href^="dashboard_admin.php"]:hover,
+a[href^="dashboard_admin.php"]:focus {
+  color: var(--hunter-green);
+}
+
+/* Headings spacing */
+h2, h3 {
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: var(--brunswick-green);
+}
