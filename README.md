@@ -1,6 +1,3 @@
-fitur-baru
-# Sistem PPDB SEKOLAH
-
 # Sistem PPDB 
 main
 
